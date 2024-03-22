@@ -4,12 +4,13 @@ import styles from "./TaskList.module.css"
 
 interface TaskListProps {
   taskList: ITask[]
+  removeTask: (id: string) => void
 }
 
-export default function TaskList({ taskList }: TaskListProps) {
+export default function TaskList({ taskList, removeTask }: TaskListProps) {
   return (
     <>
-      {taskList.length === 0 && <p>Lista de tarefas vazia</p>}
+      {taskList.length === 0 && <p>A lista de tarefas está vazia</p>}
 
       {taskList.map((task) => (
         <div key={task.id} className={styles.task_list}>
@@ -18,7 +19,7 @@ export default function TaskList({ taskList }: TaskListProps) {
           </div>
           <div className={styles.buttons_icons}>
             <button className={styles.icon}><FaEdit /></button>
-            <button className={styles.icon}><FaTrashAlt /></button>
+            <button className={styles.icon} onClick={() => removeTask(task.id)}><FaTrashAlt /></button>
           </div>
         </div>
       ))}

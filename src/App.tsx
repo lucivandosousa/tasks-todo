@@ -10,6 +10,10 @@ function App() {
 
   const [taskList, setTaskList] = useState<ITask[]>([])
 
+  function removeTask(id: string) {
+    setTaskList!((current) => current.filter(task => task.id !== id))
+  }
+
   return (
 
     <div>
@@ -21,7 +25,7 @@ function App() {
         </div>
         <div>
           <h2>Suas tarefas:</h2>
-          <TaskList taskList={taskList}/>
+          <TaskList taskList={taskList} removeTask={removeTask}/>
         </div>
       </main>
       <Footer />
