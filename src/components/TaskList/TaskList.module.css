@@ -1,0 +1,22 @@
+.task_list {
+  display: flex;
+  max-width: 400px;
+  border-bottom: 1px solid #a6a4a4;
+  margin: 0 auto;
+  padding: 8px 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons_icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 20%;
+  border: 1px solid #a6a4a4;
+  cursor: pointer;
+}
