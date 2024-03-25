@@ -15,9 +15,15 @@ export default function TaskForm({ btnText, taskList, setTaskList }: TaskFormPro
 
     e.preventDefault()
 
+    if(!textInput) {
+      alert("Adicione uma tarefa")
+      return
+    }
+
     const newTask: ITask = {
       id: crypto.randomUUID(),
       title: textInput,
+      completed: false
     }
 
     setTaskList!((current) => [...current, newTask])
