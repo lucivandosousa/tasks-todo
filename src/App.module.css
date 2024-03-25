@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  height: 100vh;
+  max-height: calc(100vh - 145px);
+  overflow-y: auto;
 }
 
 .main h2 {

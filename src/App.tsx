@@ -14,6 +14,10 @@ function App() {
     setTaskList!((current) => current.filter(task => task.id !== id))
   }
 
+  function handleTaskCompleted(id: string) {
+    setTaskList(current => current.map(task => task.id === id ? { ...task, completed: !task.completed } : task))
+  }
+
   return (
 
     <div>
@@ -25,7 +29,7 @@ function App() {
         </div>
         <div>
           <h2>Suas tarefas:</h2>
-          <TaskList taskList={taskList} removeTask={removeTask}/>
+          <TaskList taskList={taskList} removeTask={removeTask} handleTaskCompleted={handleTaskCompleted}/>
         </div>
       </main>
       <Footer />

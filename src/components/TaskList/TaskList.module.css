@@ -20,3 +20,8 @@
   border: 1px solid #a6a4a4;
   cursor: pointer;
 }
+
+.itemCheck {
+  text-decoration: line-through;
+  color: #ff0000;
+}
